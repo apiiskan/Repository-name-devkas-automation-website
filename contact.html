@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 极曜动力机械设备有限公司</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>极曜动力</h1>
+                <span class="slogan">全球自动化工业解决方案</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="services.html">服务</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p>期待与您合作，共创工业自动化未来</p>
+        </div>
+    </header>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h2>联系信息</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>公司地址</h3>
+                                <p>福建厦门</p>
+                                <p>中国</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>电子邮箱</h3>
+                                <p>kanye330@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>联系电话</h3>
+                                <p>+1 213-451-8512 (美国)</p>
+                                <p>+86 133-7507-7753 (中国)</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>工作时间</h3>
+                                <p>周一至周五: 9:00 - 18:00</p>
+                                <p>周六: 9:00 - 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 社交媒体 -->
+                    <div class="social-media">
+                        <h3>社交媒体</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 联系表单 -->
+                <div class="contact-form-wrapper">
+                    <h2>在线留言</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">公司名称</label>
+                            <input type="text" id="company" name="company" placeholder="请输入公司名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮箱 *</label>
+                            <input type="email" id="email" name="email" required placeholder="请输入您的邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话 *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="请输入您的电话">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题 *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">请选择主题</option>
+                                <option value="product">产品咨询</option>
+                                <option value="quote">报价请求</option>
+                                <option value="support">技术支持</option>
+                                <option value="cooperation">商务合作</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容 *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="请输入您的留言内容"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">发送留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp 快捷联系 -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <h2>快速通过 WhatsApp 联系</h2>
+            <p>点击下方按钮，一键联系我们</p>
+            <a href="https://api.whatsapp.com/send?phone=12134518512&text=您好，我对极曜动力的工业自动化服务感兴趣" 
+               target="_blank" 
+               class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp 联系我们
+            </a>
+        </div>
+    </section>
+
+    <!-- 地图 -->
+    <section class="map-section">
+        <div class="container">
+            <h2>公司位置</h2>
+            <div class="map-placeholder">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>福建厦门</p>
+                <small>中国</small>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>极曜动力</h3>
+                    <p>全球自动化工业解决方案专家</p>
+                    <p>福建厦门 · 服务全球</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-envelope"></i> kanye330@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +1 213-451-8512</p>
+                    <p><i class="fas fa-phone"></i> +86 133-7507-7753</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福建厦门</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="services.html">服务</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 极曜动力机械设备有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #002B5B 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .contact {
+            padding: 80px 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .contact-info h2,
+        .contact-form-wrapper h2 {
+            margin-bottom: 30px;
+            color: #002B5B;
+        }
+        .info-cards {
+            display: grid;
+            gap: 20px;
+        }
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .info-card i {
+            font-size: 1.5rem;
+            color: #1a5f7a;
+            margin-top: 5px;
+        }
+        .info-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #002B5B;
+        }
+        .info-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        .social-media {
+            margin-top: 40px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: #1a5f7a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: #159895;
+            transform: translateY(-3px);
+        }
+        .contact-form {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #002B5B;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a5f7a;
+        }
+        .btn-block {
+            width: 100%;
+        }
+        .whatsapp-section {
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        .whatsapp-section h2 {
+            margin-bottom: 10px;
+        }
+        .whatsapp-section p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+        }
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+        .map-section {
+            padding: 80px 0;
+        }
+        .map-placeholder {
+            background: #f8f9fa;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #1a5f7a;
+        }
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
