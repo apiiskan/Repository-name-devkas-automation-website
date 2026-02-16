@@ -270,16 +270,48 @@ ul {
 
 .service-card {
     background-color: var(--white);
-    padding: 40px 30px;
+    padding: 0;
     border-radius: 10px;
     text-align: center;
     border: 2px solid var(--light-color);
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .service-card:hover {
     border-color: var(--primary-color);
     box-shadow: var(--shadow);
+    transform: translateY(-5px);
+}
+
+.service-card .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    padding: 20px 20px 10px;
+}
+
+.service-card p {
+    padding: 0 20px;
+}
+
+.service-card .learn-more {
+    display: block;
+    padding: 15px 20px 20px;
 }
 
 .service-card i {
