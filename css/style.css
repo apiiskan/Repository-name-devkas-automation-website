@@ -160,7 +160,7 @@ ul {
 /* 首页横幅 */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, rgba(0,43,91,0.75) 0%, rgba(26,95,122,0.75) 100%), url('../images/hero-bg.jpg');
+    background: linear-gradient(135deg, rgba(0,43,91,0.7) 0%, rgba(26,95,122,0.6) 100%), url('../images/hero-industrial.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
