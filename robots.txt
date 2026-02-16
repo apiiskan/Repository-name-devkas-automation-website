@@ -1,0 +1,10 @@
+# robots.txt for jiyaodongli.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jiyaodongli.com/sitemap.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /templates/
+Disallow: /pages/
