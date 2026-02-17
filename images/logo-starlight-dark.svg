@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap');
+    </style>
+  </defs>
+  
+  <!-- 六芒星外轮廓 - 深色版（用于浅色背景） -->
+  <g transform="translate(100, 100)">
+    <!-- 上三角 -->
+    <polygon points="0,-70 60,35 -60,35" fill="none" stroke="#1a5f7a" stroke-width="8" stroke-linejoin="round"/>
+    <!-- 下三角 -->
+    <polygon points="0,70 60,-35 -60,-35" fill="none" stroke="#1a5f7a" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- SL 文字 - Poppins 字体 -->
+  <text x="100" y="112" font-family="Poppins, Arial, sans-serif" font-size="42" font-weight="700" fill="#1a5f7a" text-anchor="middle" letter-spacing="2">SL</text>
+</svg>

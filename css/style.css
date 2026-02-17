@@ -110,21 +110,34 @@ ul {
     padding: 15px 20px;
 }
 
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
-.logo h1.brand-en {
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo .brand-en {
+    color: var(--primary-color);
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     letter-spacing: 3px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
 }
 
 .logo .slogan {
-    display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-light);
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
