@@ -262,5 +262,10 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // 首页hero区域防爬虫保护
+        document.querySelector('.hero').addEventListener('contextmenu', e => e.preventDefault());
+        document.querySelector('.hero').addEventListener('dragstart', e => e.preventDefault());
+    </script>
 </body>
 </html>
