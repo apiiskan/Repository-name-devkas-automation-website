@@ -80,6 +80,46 @@
             border-radius: 20px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.15);
         }
+        /* 品牌叠加层 */
+        .branded-visual {
+            position: relative;
+        }
+        .brand-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+        }
+        .brand-overlay .overlay-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .brand-overlay .overlay-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 5px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .brand-overlay .overlay-slogan {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
         .intro-visual .floating-card {
             position: absolute;
             background: white;
@@ -506,8 +546,13 @@
                     <p>作为<span class="highlight">全球自动化工厂供给者</span>，我们依托强大的供应链网络和专业的技术团队，为全球客户提供高品质的工业自动化设备和全方位技术服务。</p>
                     <p>从设备选型、方案设计到安装调试、售后维护，我们致力于成为客户值得信赖的长期合作伙伴，助力制造业智能化升级。</p>
                 </div>
-                <div class="intro-visual">
-                    <img src="images/hero-port.jpg" alt="极曜动力 - 全球供应网络">
+                <div class="intro-visual branded-visual">
+                    <img src="images/about-xiamen.jpg" alt="厦门 - 极曜动力总部">
+                    <div class="brand-overlay">
+                        <img src="images/logo-starlight-light.svg" alt="STAR LIGHT" class="overlay-logo">
+                        <span class="overlay-text">STAR LIGHT</span>
+                        <span class="overlay-slogan">Global Industrial Automation Expert</span>
+                    </div>
                     <div class="floating-card card-1">
                         <div class="number">500+</div>
                         <div class="label">合作企业</div>
