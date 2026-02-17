@@ -9,13 +9,358 @@
     <link rel="canonical" href="https://jiyaodongli.com/services.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(0,43,91,0.85) 0%, rgba(26,95,122,0.75) 100%), url('images/hero-port.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+        
+        /* 服务概览卡片 */
+        .services-overview {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+        }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        .overview-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(26,95,122,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .overview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f7a, #57c5b6);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .overview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(26,95,122,0.15);
+        }
+        .overview-card:hover::before {
+            transform: scaleX(1);
+        }
+        .overview-card .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: transform 0.4s ease;
+        }
+        .overview-card:hover .icon {
+            transform: rotateY(180deg);
+        }
+        .overview-card .icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .overview-card h3 {
+            color: #002B5B;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        .overview-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* 服务详情 */
+        .services-detail {
+            padding: 80px 0;
+        }
+        .service-detail-card {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-bottom: 60px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+        }
+        .service-detail-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .service-visual {
+            flex: 0 0 40%;
+            background: linear-gradient(135deg, #1a5f7a 0%, #002B5B 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-visual::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            top: -50%;
+            left: -50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+        .service-visual i {
+            font-size: 5rem;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .service-visual .service-num {
+            font-size: 6rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+        }
+        .service-content {
+            flex: 1;
+            padding: 50px;
+        }
+        .service-content h2 {
+            color: #002B5B;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-content h2::before {
+            content: '';
+            width: 5px;
+            height: 30px;
+            background: linear-gradient(180deg, #1a5f7a, #57c5b6);
+            border-radius: 3px;
+        }
+        .service-content > p {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .service-content ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .service-content li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+        .service-content li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #57c5b6, #159895);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        .service-brands {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+        }
+        .service-brands span {
+            display: inline-block;
+            padding: 6px 15px;
+            background: #f0f7f7;
+            color: #1a5f7a;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 5px 5px 5px 0;
+            font-weight: 500;
+        }
+
+        /* 服务流程 */
+        .process {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #002B5B 0%, #1a5f7a 100%);
+            color: white;
+        }
+        .process .section-title {
+            color: white;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: rgba(255,255,255,0.2);
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 0 15px;
+            position: relative;
+        }
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #1a5f7a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .step:hover .step-number {
+            transform: scale(1.1);
+            background: #57c5b6;
+            color: white;
+        }
+        .step h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .step p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        /* 合作品牌 */
+        .brands-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .brands-marquee {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .brand-item {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #aaa;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        .brand-item:hover {
+            color: #1a5f7a;
+        }
+
+        @media (max-width: 992px) {
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .service-detail-card,
+            .service-detail-card:nth-child(even) {
+                flex-direction: column;
+            }
+            .service-visual {
+                padding: 40px 20px;
+            }
+            .service-content ul {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-steps::before {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-content {
+                padding: 30px 25px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <h1>极曜动力</h1>
-                <span class="slogan">全球自动化工业解决方案</span>
+                <h1 class="brand-en">STAR LIGHT</h1>
+                <span class="slogan">Global Industrial Automation Solutions</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
@@ -29,132 +374,183 @@
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="page-hero">
         <div class="container">
-            <h1>我们的服务</h1>
-            <p>专业工业自动化设备供应与服务</p>
+            <h1>专业服务</h1>
+            <p>一站式工业自动化解决方案，从设备选型到售后维护全流程覆盖</p>
         </div>
     </header>
 
-    <section class="services-detail">
+    <!-- 服务概览 -->
+    <section class="services-overview">
         <div class="container">
-            <!-- 工业机器人 -->
-            <div class="service-detail-card" id="robotics">
-                <div class="service-icon">
-                    <i class="fas fa-robot"></i>
+            <h2 class="section-title">核心服务</h2>
+            <p class="section-subtitle">四大核心业务板块，满足您的全方位自动化需求</p>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="icon"><i class="fas fa-microchip"></i></div>
+                    <h3>设备供应</h3>
+                    <p>PLC、变频器、伺服系统等全品类工业自动化核心部件</p>
                 </div>
-                <div class="service-content">
-                    <h2>工业机器人</h2>
-                    <p>提供各类工业机器人及配套设备，包括：</p>
-                    <ul>
-                        <li>六轴关节机器人</li>
-                        <li>SCARA 机器人</li>
-                        <li>Delta 机器人</li>
-                        <li>协作机器人 (Cobot)</li>
-                        <li>机器人末端执行器</li>
-                        <li>机器人控制系统</li>
-                    </ul>
-                    <p class="service-note">合作品牌：FANUC、ABB、KUKA、安川、埃斯顿等</p>
+                <div class="overview-card">
+                    <div class="icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>系统集成</h3>
+                    <p>产线改造、控制系统设计、现场调试与交付支持</p>
                 </div>
-            </div>
-
-            <!-- PLC 控制系统 -->
-            <div class="service-detail-card" id="plc">
-                <div class="service-icon">
-                    <i class="fas fa-microchip"></i>
+                <div class="overview-card">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <h3>备件耗材</h3>
+                    <p>常用备件、易损件库存充足，快速响应缩短停线时间</p>
                 </div>
-                <div class="service-content">
-                    <h2>PLC & 控制系统</h2>
-                    <p>专业供应各类PLC及自动化控制产品：</p>
-                    <ul>
-                        <li>西门子 (SIEMENS) PLC</li>
-                        <li>三菱 (MITSUBISHI) PLC</li>
-                        <li>欧姆龙 (OMRON) PLC</li>
-                        <li>施耐德 (SCHNEIDER) PLC</li>
-                        <li>人机界面 (HMI)</li>
-                        <li>变频器、伺服驱动器</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 自动化配件 -->
-            <div class="service-detail-card" id="parts">
-                <div class="service-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="service-content">
-                    <h2>自动化配件</h2>
-                    <p>全系列工业自动化配件供应：</p>
-                    <ul>
-                        <li>各类传感器 (光电、接近、限位等)</li>
-                        <li>工业电机 (伺服电机、步进电机)</li>
-                        <li>减速机、减速器</li>
-                        <li>气动元件 (气缸、电磁阀)</li>
-                        <li>工业皮带、链条</li>
-                        <li>机械手爪、夹具</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 产线设备 -->
-            <div class="service-detail-card" id="production">
-                <div class="service-icon">
-                    <i class="fas fa-industry"></i>
-                </div>
-                <div class="service-content">
-                    <h2>产线设备</h2>
-                    <p>自动化生产线设计与配套设备：</p>
-                    <ul>
-                        <li>自动化装配线</li>
-                        <li>输送设备</li>
-                        <li>检测设备</li>
-                        <li>包装设备</li>
-                        <li>仓储物流设备</li>
-                        <li>非标定制设备</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 技术支持 -->
-            <div class="service-detail-card" id="support">
-                <div class="service-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="service-content">
-                    <h2>技术支持服务</h2>
-                    <p>全方位技术支持，确保设备稳定运行：</p>
-                    <ul>
-                        <li>选型咨询</li>
-                        <li>方案设计</li>
-                        <li>安装调试</li>
-                        <li>售后维护</li>
-                        <li>24/7 技术支持</li>
-                        <li>培训服务</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 全球采购 -->
-            <div class="service-detail-card" id="sourcing">
-                <div class="service-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="service-content">
-                    <h2>全球采购服务</h2>
-                    <p>帮助客户全球采购工业设备：</p>
-                    <ul>
-                        <li>产品调研与选型</li>
-                        <li>供应商对接</li>
-                        <li>质量把控</li>
-                        <li>国际物流</li>
-                        <li>清关报关</li>
-                        <li>一站式进口服务</li>
-                    </ul>
+                <div class="overview-card">
+                    <div class="icon"><i class="fas fa-headset"></i></div>
+                    <h3>技术支持</h3>
+                    <p>24/7 远程协助 + 现场服务，保障设备稳定运行</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 服务详情 -->
+    <section class="services-detail">
+        <div class="container">
+            <!-- 工业机器人 -->
+            <div class="service-detail-card" id="robotics">
+                <div class="service-visual">
+                    <i class="fas fa-robot"></i>
+                    <span class="service-num">01</span>
+                </div>
+                <div class="service-content">
+                    <h2>工业机器人</h2>
+                    <p>提供全系列工业机器人及配套设备，覆盖焊接、搬运、装配、喷涂等应用场景</p>
+                    <ul>
+                        <li>六轴关节机器人</li>
+                        <li>SCARA 机器人</li>
+                        <li>Delta 并联机器人</li>
+                        <li>协作机器人 (Cobot)</li>
+                        <li>机器人末端执行器</li>
+                        <li>视觉引导系统</li>
+                    </ul>
+                    <div class="service-brands">
+                        <span>FANUC</span>
+                        <span>ABB</span>
+                        <span>KUKA</span>
+                        <span>安川</span>
+                        <span>埃斯顿</span>
+                        <span>遨博</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLC 控制系统 -->
+            <div class="service-detail-card" id="plc">
+                <div class="service-visual">
+                    <i class="fas fa-microchip"></i>
+                    <span class="service-num">02</span>
+                </div>
+                <div class="service-content">
+                    <h2>PLC & 控制系统</h2>
+                    <p>专业供应各品牌 PLC、HMI、变频器、伺服驱动等核心控制产品</p>
+                    <ul>
+                        <li>西门子 S7 系列 PLC</li>
+                        <li>三菱 Q/iQ-R 系列</li>
+                        <li>欧姆龙 NJ/NX 系列</li>
+                        <li>施耐德 Modicon 系列</li>
+                        <li>人机界面 (HMI)</li>
+                        <li>变频器 & 伺服驱动</li>
+                    </ul>
+                    <div class="service-brands">
+                        <span>SIEMENS</span>
+                        <span>MITSUBISHI</span>
+                        <span>OMRON</span>
+                        <span>SCHNEIDER</span>
+                        <span>AB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 自动化配件 -->
+            <div class="service-detail-card" id="parts">
+                <div class="service-visual">
+                    <i class="fas fa-tools"></i>
+                    <span class="service-num">03</span>
+                </div>
+                <div class="service-content">
+                    <h2>自动化配件</h2>
+                    <p>全系列工业自动化配件，备件库存充足，快速发货</p>
+                    <ul>
+                        <li>传感器 (光电/接近/限位)</li>
+                        <li>伺服电机 & 步进电机</li>
+                        <li>精密减速机</li>
+                        <li>气动元件 (气缸/电磁阀)</li>
+                        <li>工业皮带 & 链条</li>
+                        <li>线性模组 & 导轨</li>
+                    </ul>
+                    <div class="service-brands">
+                        <span>KEYENCE</span>
+                        <span>SMC</span>
+                        <span>FESTO</span>
+                        <span>THK</span>
+                        <span>HIWIN</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产线设备 -->
+            <div class="service-detail-card" id="production">
+                <div class="service-visual">
+                    <i class="fas fa-industry"></i>
+                    <span class="service-num">04</span>
+                </div>
+                <div class="service-content">
+                    <h2>产线设备</h2>
+                    <p>自动化生产线规划、设计与配套设备供应</p>
+                    <ul>
+                        <li>自动化装配线</li>
+                        <li>输送系统</li>
+                        <li>视觉检测设备</li>
+                        <li>自动包装设备</li>
+                        <li>AGV & 仓储物流</li>
+                        <li>非标定制设备</li>
+                    </ul>
+                    <div class="service-brands">
+                        <span>定制方案</span>
+                        <span>交钥匙工程</span>
+                        <span>产线改造</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 全球采购 -->
+            <div class="service-detail-card" id="sourcing">
+                <div class="service-visual">
+                    <i class="fas fa-globe"></i>
+                    <span class="service-num">05</span>
+                </div>
+                <div class="service-content">
+                    <h2>全球采购服务</h2>
+                    <p>依托全球供应网络，为客户提供一站式设备采购服务</p>
+                    <ul>
+                        <li>产品调研与选型</li>
+                        <li>供应商资质审核</li>
+                        <li>价格谈判 & 合同管理</li>
+                        <li>质量验收 & 检测</li>
+                        <li>国际物流 & 清关</li>
+                        <li>进口代理服务</li>
+                    </ul>
+                    <div class="service-brands">
+                        <span>欧洲</span>
+                        <span>日本</span>
+                        <span>美国</span>
+                        <span>韩国</span>
+                        <span>台湾</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务流程 -->
     <section class="process">
         <div class="container">
             <h2 class="section-title">服务流程</h2>
@@ -162,37 +558,55 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>需求沟通</h3>
-                    <p>了解客户需求，提供专业咨询</p>
+                    <p>深入了解工况需求<br>明确技术参数</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>方案设计</h3>
-                    <p>制定最优解决方案</p>
+                    <p>专业选型建议<br>定制解决方案</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>报价确认</h3>
-                    <p>提供详细报价方案</p>
+                    <p>透明报价明细<br>灵活付款方式</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>签订合同</h3>
-                    <p>明确双方权责</p>
+                    <h3>合同签订</h3>
+                    <p>明确交期承诺<br>保障双方权益</p>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
-                    <h3>交付安装</h3>
-                    <p>设备交付并安装调试</p>
+                    <h3>交付实施</h3>
+                    <p>安全包装运输<br>现场安装调试</p>
                 </div>
                 <div class="step">
                     <div class="step-number">6</div>
-                    <h3>售后服务</h3>
-                    <p>长期技术支持与维护</p>
+                    <h3>售后保障</h3>
+                    <p>质保期服务<br>长期技术支持</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 合作品牌 -->
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="section-title">合作品牌</h2>
+            <div class="brands-marquee">
+                <span class="brand-item">SIEMENS</span>
+                <span class="brand-item">MITSUBISHI</span>
+                <span class="brand-item">ABB</span>
+                <span class="brand-item">SCHNEIDER</span>
+                <span class="brand-item">OMRON</span>
+                <span class="brand-item">FANUC</span>
+                <span class="brand-item">KEYENCE</span>
+                <span class="brand-item">SMC</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta">
         <div class="container">
             <h2>需要工业自动化解决方案？</h2>
@@ -205,9 +619,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>极曜动力</h3>
-                    <p>全球自动化工业解决方案专家</p>
-                    <p>福建厦门 · 服务全球</p>
+                    <h3 class="brand-en">STAR LIGHT</h3>
+                    <p>Global Industrial Automation Expert</p>
+                    <p>Xiamen, China · Worldwide Service</p>
                 </div>
                 <div class="footer-section">
                     <h3>联系我们</h3>
@@ -227,109 +641,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 极曜动力机械设备有限公司 版权所有</p>
+                <p>&copy; 2025 极曜动力机械设备有限公司 版权所有</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, #1a5f7a 0%, #002B5B 100%);
-            color: white;
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .services-detail {
-            padding: 80px 0;
-        }
-        .service-detail-card {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 40px;
-            margin-bottom: 40px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .service-detail-card:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        .service-icon {
-            flex-shrink: 0;
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #1a5f7a, #159895);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .service-icon i {
-            font-size: 3rem;
-            color: white;
-        }
-        .service-content h2 {
-            color: #002B5B;
-            margin-bottom: 15px;
-        }
-        .service-content ul {
-            margin: 15px 0;
-            padding-left: 20px;
-            list-style: disc;
-        }
-        .service-content li {
-            margin-bottom: 8px;
-        }
-        .service-note {
-            color: #57c5b6;
-            font-style: italic;
-        }
-        .process {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .step {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            padding: 20px;
-        }
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1a5f7a, #159895);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 15px;
-        }
-        @media (max-width: 768px) {
-            .service-detail-card,
-            .service-detail-card:nth-child(even) {
-                flex-direction: column;
-                text-align: center;
-            }
-            .service-content ul {
-                text-align: left;
-            }
-        }
-    </style>
 </body>
 </html>

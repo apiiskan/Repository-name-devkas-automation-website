@@ -9,13 +9,437 @@
     <link rel="canonical" href="https://jiyaodongli.com/about.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(0,43,91,0.85) 0%, rgba(26,95,122,0.75) 100%), url('images/hero-port.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* 公司简介 */
+        .about-intro {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .intro-content h2 {
+            color: #002B5B;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        .intro-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f7a, #57c5b6);
+            border-radius: 2px;
+        }
+        .intro-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+        .intro-content .highlight {
+            color: #1a5f7a;
+            font-weight: 600;
+        }
+        .intro-visual {
+            position: relative;
+        }
+        .intro-visual img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+        .intro-visual .floating-card {
+            position: absolute;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .intro-visual .card-1 {
+            bottom: -30px;
+            left: -30px;
+        }
+        .intro-visual .card-2 {
+            top: -20px;
+            right: -20px;
+        }
+        .floating-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5f7a;
+            line-height: 1;
+        }
+        .floating-card .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* 数据统计 */
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #002B5B 0%, #1a5f7a 100%);
+            color: white;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        .stat-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #57c5b6;
+        }
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .stat-item .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* 愿景使命 */
+        .vision-mission {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .vm-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a5f7a, #57c5b6);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .vm-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.1);
+        }
+        .vm-card:hover::before {
+            transform: scaleX(1);
+        }
+        .vm-card .icon-wrap {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: transform 0.4s ease;
+        }
+        .vm-card:hover .icon-wrap {
+            transform: rotateY(180deg);
+        }
+        .vm-card i {
+            font-size: 2.2rem;
+            color: white;
+        }
+        .vm-card h3 {
+            color: #002B5B;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .vm-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* 发展历程 */
+        .timeline-section {
+            padding: 100px 0;
+        }
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #1a5f7a, #57c5b6);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        .timeline-content {
+            background: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            max-width: 400px;
+            margin-right: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 0;
+            margin-left: 30px;
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            transform: rotate(45deg);
+            box-shadow: 5px -5px 10px rgba(0,0,0,0.05);
+        }
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: auto;
+            left: -10px;
+            box-shadow: -5px 5px 10px rgba(0,0,0,0.05);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #1a5f7a;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(26,95,122,0.3);
+            z-index: 1;
+        }
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a5f7a, #159895);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .timeline-content h3 {
+            color: #002B5B;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* 核心优势 */
+        .advantages {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .advantage-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(26,95,122,0.08);
+        }
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(26,95,122,0.12);
+            border-color: rgba(26,95,122,0.2);
+        }
+        .advantage-card .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(26,95,122,0.1), rgba(87,197,182,0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .advantage-card i {
+            font-size: 1.8rem;
+            color: #1a5f7a;
+        }
+        .advantage-card h3 {
+            color: #002B5B;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+        .advantage-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* 合作伙伴 */
+        .partners-section {
+            padding: 80px 0;
+        }
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        .partner-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ccc;
+            letter-spacing: 3px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .partner-logo:hover {
+            color: #1a5f7a;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .intro-visual {
+                order: -1;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .vm-grid, .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .timeline-dot {
+                left: 20px;
+            }
+            .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -10px;
+                right: auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .floating-card {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <h1>极曜动力</h1>
-                <span class="slogan">全球自动化工业解决方案</span>
+                <h1 class="brand-en">STAR LIGHT</h1>
+                <span class="slogan">Global Industrial Automation Solutions</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
@@ -29,28 +453,61 @@
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="page-hero">
         <div class="container">
             <h1>关于我们</h1>
-            <p>极曜动力 - 全球自动化工业解决方案专家</p>
+            <p>极曜动力 · Global Industrial Automation Expert</p>
         </div>
     </header>
 
     <!-- 公司简介 -->
     <section class="about-intro">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
+            <div class="intro-grid">
+                <div class="intro-content">
                     <h2>公司简介</h2>
-                    <p>极曜动力机械设备有限公司是一家专业从事工业自动化设备供应的企业，总部位于中国厦门。</p>
-                    <p>作为<strong>全球自动化工厂供给者</strong>，我们致力于为全球客户提供高品质的工业自动化设备和完善的技术服务。</p>
-                    <p>公司拥有一支经验丰富的技术团队，能够为客户提供从选型咨询、方案设计到售后维护的全方位服务。</p>
+                    <p><span class="highlight">极曜动力机械设备有限公司</span>是一家专业从事工业自动化设备供应的企业，总部位于中国福建厦门。</p>
+                    <p>作为<span class="highlight">全球自动化工厂供给者</span>，我们依托强大的供应链网络和专业的技术团队，为全球客户提供高品质的工业自动化设备和全方位技术服务。</p>
+                    <p>从设备选型、方案设计到安装调试、售后维护，我们致力于成为客户值得信赖的长期合作伙伴，助力制造业智能化升级。</p>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-industry"></i>
-                        <p>极曜动力</p>
+                <div class="intro-visual">
+                    <img src="images/hero-port.jpg" alt="极曜动力 - 全球供应网络">
+                    <div class="floating-card card-1">
+                        <div class="number">500+</div>
+                        <div class="label">合作企业</div>
                     </div>
+                    <div class="floating-card card-2">
+                        <div class="number">50+</div>
+                        <div class="label">服务国家</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据统计 -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-building"></i>
+                    <span class="number">500+</span>
+                    <span class="label">合作企业</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <span class="number">50+</span>
+                    <span class="label">服务国家</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span class="number">10000+</span>
+                    <span class="label">成功订单</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span class="number">24/7</span>
+                    <span class="label">技术支持</span>
                 </div>
             </div>
         </div>
@@ -59,64 +516,70 @@
     <!-- 愿景使命 -->
     <section class="vision-mission">
         <div class="container">
+            <h2 class="section-title">愿景与使命</h2>
             <div class="vm-grid">
                 <div class="vm-card">
-                    <i class="fas fa-eye"></i>
-                    <h2>愿景</h2>
-                    <p>成为全球领先的工业自动化解决方案提供商，助力制造业智能化升级</p>
+                    <div class="icon-wrap"><i class="fas fa-eye"></i></div>
+                    <h3>企业愿景</h3>
+                    <p>成为全球领先的工业自动化解决方案提供商，助力制造业智能化升级转型</p>
                 </div>
                 <div class="vm-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h2>使命</h2>
-                    <p>为客户创造价值，为员工创造机会，为社会创造效益</p>
+                    <div class="icon-wrap"><i class="fas fa-bullseye"></i></div>
+                    <h3>企业使命</h3>
+                    <p>以专业的产品和服务，为客户创造价值，推动全球制造业高质量发展</p>
                 </div>
                 <div class="vm-card">
-                    <i class="fas fa-heart"></i>
-                    <h2>价值观</h2>
-                    <p>诚信、创新、专业、共赢</p>
+                    <div class="icon-wrap"><i class="fas fa-heart"></i></div>
+                    <h3>核心价值观</h3>
+                    <p>诚信为本、专业致胜、创新驱动、合作共赢</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 发展历程 -->
-    <section class="timeline">
+    <section class="timeline-section">
         <div class="container">
             <h2 class="section-title">发展历程</h2>
-            <div class="timeline-items">
+            <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2018</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-year">2018</span>
                         <h3>公司成立</h3>
-                        <p>极曜动力机械设备有限公司正式成立</p>
+                        <p>极曜动力机械设备有限公司在厦门正式成立，专注工业自动化设备供应</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2019</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-year">2019</span>
                         <h3>国际化布局</h3>
-                        <p>开始拓展海外市场，建立全球供应网络</p>
+                        <p>开始拓展海外市场，建立全球供应商网络，服务覆盖东南亚、中东地区</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2020</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-year">2020</span>
                         <h3>技术升级</h3>
-                        <p>引进先进自动化技术，完善服务体系</p>
+                        <p>引进先进数字化管理系统，完善服务体系，客户满意度大幅提升</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2021</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-year">2021</span>
                         <h3>规模扩张</h3>
-                        <p>业务覆盖50+国家和地区，服务500+企业</p>
+                        <p>业务覆盖50+国家和地区，服务500+企业，年订单量突破万单</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2022-至今</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-year">2022-至今</span>
                         <h3>持续创新</h3>
-                        <p>不断深化技术研发，提供更优质的解决方案</p>
+                        <p>深化技术研发能力，拓展系统集成服务，向综合解决方案提供商转型</p>
                     </div>
                 </div>
             </div>
@@ -124,78 +587,56 @@
     </section>
 
     <!-- 核心优势 -->
-    <section class="core-advantages">
+    <section class="advantages">
         <div class="container">
             <h2 class="section-title">我们的核心优势</h2>
             <div class="advantages-grid">
-                <div class="advantage-item">
-                    <i class="fas fa-globe"></i>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
                     <h3>全球供应网络</h3>
-                    <p>与全球500+优质供应商建立合作关系，确保产品品质和供货速度</p>
+                    <p>与500+优质供应商建立长期合作，确保产品品质和供货速度</p>
                 </div>
-                <div class="advantage-item">
-                    <i class="fas fa-certificate"></i>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
                     <h3>品质保证</h3>
-                    <p>所有产品均经过严格质量检测，提供原厂质保</p>
+                    <p>所有产品均经过严格质量检测，提供原厂正品质保服务</p>
                 </div>
-                <div class="advantage-item">
-                    <i class="fas fa-users"></i>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
                     <h3>专业团队</h3>
-                    <p>拥有20+年行业经验的技术团队，为客户提供专业支持</p>
+                    <p>拥有多年行业经验的技术团队，为客户提供专业选型支持</p>
                 </div>
-                <div class="advantage-item">
-                    <i class="fas fa-truck"></i>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-shipping-fast"></i></div>
                     <h3>快速交付</h3>
-                    <p>完善的物流体系，全球范围内快速送达</p>
+                    <p>完善的物流体系，常规备件48小时发货，全球范围快速送达</p>
                 </div>
-                <div class="advantage-item">
-                    <i class="fas fa-headset"></i>
-                    <h3>24/7服务</h3>
-                    <p>全年无休的技术支持，快速响应客户需求</p>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 服务</h3>
+                    <p>全年无休的技术支持热线，快速响应客户需求和问题</p>
                 </div>
-                <div class="advantage-item">
-                    <i class="fas fa-handshake"></i>
+                <div class="advantage-card">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
                     <h3>一站式服务</h3>
-                    <p>从咨询到售后，提供全流程贴心服务</p>
+                    <p>从咨询选型到安装调试、售后维护，提供全流程贴心服务</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 团队介绍 -->
-    <section class="team">
+    <!-- 合作伙伴 -->
+    <section class="partners-section">
         <div class="container">
-            <h2 class="section-title">专业团队</h2>
-            <p class="section-subtitle">我们拥有一支经验丰富、专业高效的服务团队</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>专业技术团队</h3>
-                    <p>20+年行业经验</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>销售顾问</h3>
-                    <p>为您提供专业咨询</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>售后工程师</h3>
-                    <p>保障设备稳定运行</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>物流团队</h3>
-                    <p>确保准时送达</p>
-                </div>
+            <h2 class="section-title">合作品牌</h2>
+            <p class="section-subtitle">我们与全球领先的自动化品牌建立了深度合作关系</p>
+            <div class="partners-grid">
+                <span class="partner-logo">SIEMENS</span>
+                <span class="partner-logo">MITSUBISHI</span>
+                <span class="partner-logo">ABB</span>
+                <span class="partner-logo">SCHNEIDER</span>
+                <span class="partner-logo">OMRON</span>
+                <span class="partner-logo">FANUC</span>
             </div>
         </div>
     </section>
@@ -213,9 +654,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>极曜动力</h3>
-                    <p>全球自动化工业解决方案专家</p>
-                    <p>福建厦门 · 服务全球</p>
+                    <h3 class="brand-en">STAR LIGHT</h3>
+                    <p>Global Industrial Automation Expert</p>
+                    <p>Xiamen, China · Worldwide Service</p>
                 </div>
                 <div class="footer-section">
                     <h3>联系我们</h3>
@@ -235,200 +676,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 极曜动力机械设备有限公司 版权所有</p>
+                <p>&copy; 2025 极曜动力机械设备有限公司 版权所有</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, #1a5f7a 0%, #002B5B 100%);
-            color: white;
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .about-intro {
-            padding: 80px 0;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .about-content h2 {
-            color: #002B5B;
-            margin-bottom: 20px;
-        }
-        .about-content p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-        .about-image .image-placeholder {
-            background: linear-gradient(135deg, #1a5f7a, #159895);
-            height: 400px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        .image-placeholder i {
-            font-size: 5rem;
-            margin-bottom: 20px;
-        }
-        .vision-mission {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .vm-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .vm-card {
-            text-align: center;
-            padding: 40px 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .vm-card i {
-            font-size: 3rem;
-            color: #1a5f7a;
-            margin-bottom: 20px;
-        }
-        .vm-card h2 {
-            color: #002B5B;
-            margin-bottom: 15px;
-        }
-        .timeline {
-            padding: 80px 0;
-        }
-        .timeline-items {
-            max-width: 800px;
-            margin: 40px auto 0;
-        }
-        .timeline-item {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 25px;
-            top: 50px;
-            bottom: -30px;
-            width: 2px;
-            background: #1a5f7a;
-        }
-        .timeline-item:last-child::before {
-            display: none;
-        }
-        .timeline-date {
-            width: 50px;
-            height: 50px;
-            background: #1a5f7a;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        .timeline-content {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 1;
-        }
-        .timeline-content h3 {
-            color: #002B5B;
-            margin-bottom: 5px;
-        }
-        .core-advantages {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .advantage-item {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .advantage-item i {
-            font-size: 2.5rem;
-            color: #1a5f7a;
-            margin-bottom: 15px;
-        }
-        .advantage-item h3 {
-            margin-bottom: 10px;
-            color: #002B5B;
-        }
-        .advantage-item p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .team {
-            padding: 80px 0;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .team-member {
-            text-align: center;
-        }
-        .member-photo {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #1a5f7a, #159895);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-        }
-        .member-photo i {
-            font-size: 3rem;
-            color: white;
-        }
-        .team-member h3 {
-            color: #002B5B;
-            margin-bottom: 5px;
-        }
-        .team-member p {
-            color: #666;
-        }
-        @media (max-width: 768px) {
-            .about-grid,
-            .vm-grid,
-            .advantages-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-item {
-                flex-direction: column;
-            }
-        }
-    </style>
 </body>
 </html>
