@@ -1,6 +1,41 @@
 // 主 JavaScript 文件
 
 document.addEventListener('DOMContentLoaded', function() {
+    // 全站防盗水印
+    (function() {
+        const watermarkText = '极曜动力 © jiyaodongli.com';
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 200;
+        const ctx = canvas.getContext('2d');
+        ctx.rotate(-25 * Math.PI / 180);
+        ctx.font = '14px Arial';
+        ctx.fillStyle = 'rgba(180, 180, 180, 0.15)';
+        ctx.fillText(watermarkText, 0, 120);
+        
+        const watermarkDiv = document.createElement('div');
+        watermarkDiv.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url(${canvas.toDataURL()});
+            background-repeat: repeat;
+            z-index: 9999;
+            opacity: 1;
+        `;
+        document.body.appendChild(watermarkDiv);
+        
+        // 防止删除水印
+        const observer = new MutationObserver(function() {
+            if (!document.body.contains(watermarkDiv)) {
+                document.body.appendChild(watermarkDiv);
+            }
+        });
+        observer.observe(document.body, { childList: true });
+    })();
     // 移动端菜单切换
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
