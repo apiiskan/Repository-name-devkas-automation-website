@@ -1,0 +1,23 @@
+/* 图片优化样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-image {
+    background-image: url('images/hero-port.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* 优化: 使用CSS背景减少HTTP请求 */
+}
+
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}

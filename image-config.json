@@ -1,0 +1,14 @@
+{
+  "optimization": {
+    "lazy_loading": true,
+    "responsive_images": true,
+    "webp_support": false,
+    "compression_level": "balanced",
+    "cdn_ready": true
+  },
+  "performance": {
+    "target_loading_time": "<2s",
+    "max_image_size": "500KB",
+    "preload_critical": true
+  }
+}

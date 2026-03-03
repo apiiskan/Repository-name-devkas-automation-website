@@ -749,6 +749,5 @@
             });
         });
     </script>
-<script src="security-headers.js"></script>
 </body>
 </html>

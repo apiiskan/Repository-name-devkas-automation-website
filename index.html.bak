@@ -274,6 +274,5 @@
         document.querySelector('.hero').addEventListener('contextmenu', e => e.preventDefault());
         document.querySelector('.hero').addEventListener('dragstart', e => e.preventDefault());
     </script>
-<script src="security-headers.js"></script>
 </body>
 </html>

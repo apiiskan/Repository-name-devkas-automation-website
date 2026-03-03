@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>极曜动力机械设备有限公司 - Global Industrial Automation Expert</title>
@@ -33,8 +28,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/process.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="preload" href="css/style.min.css" as="style">
-<link rel="preload" href="js/main.min.js" as="script">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -42,7 +35,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html" class="logo-link">
-                    <img loading="lazy" src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
+                    <img src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
                     <div class="logo-text">
                         <span class="brand-en">STAR LIGHT</span>
                         <span class="slogan">Global Industrial Automation Solutions</span>
@@ -111,7 +104,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-image">
-                        <img loading="lazy" src="images/card-equipment.jpg" alt="设备供应">
+                        <img src="images/card-equipment.jpg" alt="设备供应">
                     </div>
                     <h3>设备供应</h3>
                     <p>工业自动化设备与核心部件选型、配套与供货</p>
@@ -119,7 +112,7 @@
                 </div>
                 <div class="service-card">
                     <div class="card-image">
-                        <img loading="lazy" src="images/card-integration.jpg" alt="系统集成">
+                        <img src="images/card-integration.jpg" alt="系统集成">
                     </div>
                     <h3>系统集成</h3>
                     <p>产线改造、控制系统集成与现场交付支持</p>
@@ -127,7 +120,7 @@
                 </div>
                 <div class="service-card">
                     <div class="card-image">
-                        <img loading="lazy" src="images/card-parts.jpg" alt="备件耗材">
+                        <img src="images/card-parts.jpg" alt="备件耗材">
                     </div>
                     <h3>备件耗材</h3>
                     <p>常用备件、易损件与标准件供应，缩短停线时间</p>
@@ -135,7 +128,7 @@
                 </div>
                 <div class="service-card">
                     <div class="card-image">
-                        <img loading="lazy" src="images/card-support.jpg" alt="售后维护">
+                        <img src="images/card-support.jpg" alt="售后维护">
                     </div>
                     <h3>售后维护</h3>
                     <p>技术支持、远程协助与维护服务，保障稳定运行</p>
@@ -203,26 +196,26 @@
         <div class="container">
             <h2 class="section-title">合作品牌</h2>
             <div class="partners-logos">
-                <div class="partner-logo"><img loading="lazy" src="images/partners/siemens.svg" alt="SIEMENS 西门子"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/abb.svg" alt="ABB"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/schneider.svg" alt="Schneider Electric 施耐德"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/mitsubishi.svg" alt="MITSUBISHI 三菱"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/omron.svg" alt="OMRON 欧姆龙"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/festo.svg" alt="FESTO"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/danfoss.svg" alt="Danfoss 丹佛斯"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/ifm.svg" alt="IFM 易福门"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/pilz.svg" alt="PILZ 皮尔兹"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/phoenix.svg" alt="Phoenix Contact 菲尼克斯"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/sick.svg" alt="SICK"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/turck.svg" alt="TURCK 图尔克"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/balluff.svg" alt="BALLUFF 巴鲁夫"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/pf.svg" alt="Pepperl+Fuchs 倍加福"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/smc.svg" alt="SMC"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/hydac.svg" alt="HYDAC 贺德克"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/yaskawa.svg" alt="YASKAWA 安川"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/lenze.svg" alt="Lenze 伦茨"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/sew.svg" alt="SEW"></div>
-                <div class="partner-logo"><img loading="lazy" src="images/partners/burkert.svg" alt="Bürkert 宝德"></div>
+                <div class="partner-logo"><img src="images/partners/siemens.svg" alt="SIEMENS 西门子"></div>
+                <div class="partner-logo"><img src="images/partners/abb.svg" alt="ABB"></div>
+                <div class="partner-logo"><img src="images/partners/schneider.svg" alt="Schneider Electric 施耐德"></div>
+                <div class="partner-logo"><img src="images/partners/mitsubishi.svg" alt="MITSUBISHI 三菱"></div>
+                <div class="partner-logo"><img src="images/partners/omron.svg" alt="OMRON 欧姆龙"></div>
+                <div class="partner-logo"><img src="images/partners/festo.svg" alt="FESTO"></div>
+                <div class="partner-logo"><img src="images/partners/danfoss.svg" alt="Danfoss 丹佛斯"></div>
+                <div class="partner-logo"><img src="images/partners/ifm.svg" alt="IFM 易福门"></div>
+                <div class="partner-logo"><img src="images/partners/pilz.svg" alt="PILZ 皮尔兹"></div>
+                <div class="partner-logo"><img src="images/partners/phoenix.svg" alt="Phoenix Contact 菲尼克斯"></div>
+                <div class="partner-logo"><img src="images/partners/sick.svg" alt="SICK"></div>
+                <div class="partner-logo"><img src="images/partners/turck.svg" alt="TURCK 图尔克"></div>
+                <div class="partner-logo"><img src="images/partners/balluff.svg" alt="BALLUFF 巴鲁夫"></div>
+                <div class="partner-logo"><img src="images/partners/pf.svg" alt="Pepperl+Fuchs 倍加福"></div>
+                <div class="partner-logo"><img src="images/partners/smc.svg" alt="SMC"></div>
+                <div class="partner-logo"><img src="images/partners/hydac.svg" alt="HYDAC 贺德克"></div>
+                <div class="partner-logo"><img src="images/partners/yaskawa.svg" alt="YASKAWA 安川"></div>
+                <div class="partner-logo"><img src="images/partners/lenze.svg" alt="Lenze 伦茨"></div>
+                <div class="partner-logo"><img src="images/partners/sew.svg" alt="SEW"></div>
+                <div class="partner-logo"><img src="images/partners/burkert.svg" alt="Bürkert 宝德"></div>
             </div>
         </div>
     </section>
@@ -274,6 +267,5 @@
         document.querySelector('.hero').addEventListener('contextmenu', e => e.preventDefault());
         document.querySelector('.hero').addEventListener('dragstart', e => e.preventDefault());
     </script>
-<script src="security-headers.js"></script>
 </body>
 </html>

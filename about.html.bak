@@ -784,6 +784,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-<script src="security-headers.js"></script>
 </body>
 </html>

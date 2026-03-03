@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>联系我们 - 获取工业自动化报价与咨询 | 极曜动力</title>
@@ -14,15 +9,13 @@
     <link rel="canonical" href="https://jiyaodongli.com/contact.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="preload" href="css/style.min.css" as="style">
-<link rel="preload" href="js/main.min.js" as="script">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">
                 <a href="index.html" class="logo-link">
-                    <img loading="lazy" src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
+                    <img src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
                     <div class="logo-text">
                         <span class="brand-en">STAR LIGHT</span>
                         <span class="slogan">Global Industrial Automation Solutions</span>
@@ -351,6 +344,5 @@
             }
         }
     </style>
-<script src="security-headers.js"></script>
 </body>
 </html>

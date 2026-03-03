@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务项目 - 工业自动化设备供应与系统集成 | 极曜动力</title>
@@ -408,15 +403,13 @@
             }
         }
     </style>
-<link rel="preload" href="css/style.min.css" as="style">
-<link rel="preload" href="js/main.min.js" as="script">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">
                 <a href="index.html" class="logo-link">
-                    <img loading="lazy" src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
+                    <img src="images/logo-starlight-dark.svg" alt="STAR LIGHT" class="logo-img">
                     <div class="logo-text">
                         <span class="brand-en">STAR LIGHT</span>
                         <span class="slogan">Global Industrial Automation Solutions</span>
@@ -479,7 +472,7 @@
             <div class="service-detail-card" id="chips">
                 <div class="service-visual">
                     <div class="image-slider" data-images='["images/services/chips-1.jpg","images/services/chips-2.jpg"]'>
-                        <img loading="lazy" src="images/services/chips-1.jpg" alt="主板芯片">
+                        <img src="images/services/chips-1.jpg" alt="主板芯片">
                     </div>
                     <span class="service-num">01</span>
                 </div>
@@ -509,7 +502,7 @@
             <div class="service-detail-card" id="plc">
                 <div class="service-visual">
                     <div class="image-slider" data-images='["images/services/plc-1.jpg","images/services/plc-2.jpg"]'>
-                        <img loading="lazy" src="images/services/plc-1.jpg" alt="PLC控制系统">
+                        <img src="images/services/plc-1.jpg" alt="PLC控制系统">
                     </div>
                     <span class="service-num">02</span>
                 </div>
@@ -538,7 +531,7 @@
             <div class="service-detail-card" id="parts">
                 <div class="service-visual">
                     <div class="image-slider" data-images='["images/services/parts-1.jpg"]'>
-                        <img loading="lazy" src="images/services/parts-1.jpg" alt="自动化配件">
+                        <img src="images/services/parts-1.jpg" alt="自动化配件">
                     </div>
                     <span class="service-num">03</span>
                 </div>
@@ -567,7 +560,7 @@
             <div class="service-detail-card" id="production">
                 <div class="service-visual">
                     <div class="image-slider" data-images='["images/services/production-1.jpg"]'>
-                        <img loading="lazy" src="images/services/production-1.jpg" alt="产线设备">
+                        <img src="images/services/production-1.jpg" alt="产线设备">
                     </div>
                     <span class="service-num">04</span>
                 </div>
@@ -605,7 +598,7 @@
             <div class="service-detail-card" id="sourcing">
                 <div class="service-visual">
                     <div class="image-slider" data-images='["images/services/sourcing-1.jpg"]'>
-                        <img loading="lazy" src="images/services/sourcing-1.jpg" alt="全球采购服务">
+                        <img src="images/services/sourcing-1.jpg" alt="全球采购服务">
                     </div>
                     <span class="service-num">05</span>
                 </div>
@@ -749,6 +742,5 @@
             });
         });
     </script>
-<script src="security-headers.js"></script>
 </body>
 </html>
